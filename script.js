@@ -1,8 +1,4 @@
-const theHobbit = new Book('The Hobbit', 'J.R.R Tolkien', 385, 'Not read')
-const theCounterfeitStatue = new Book('The Counterfeit Statue', 'J. Doe', 55, 'Not read')
-const shotForFailure = new Book('Shot for Failure', 'M. Simon', 142, 'Read');
-
-let myLibrary = [theHobbit, theCounterfeitStatue, shotForFailure];
+let myLibrary = [];
 
 function Book(title, author, pages, status) {
   this.title = title
@@ -26,7 +22,7 @@ function displayBook() {
     bookTitle.textContent = `${book.title}`;
     bookDiv.appendChild(bookTitle);
     const bookAuthor = document.createElement('div');
-    bookAuthor.textContent = `${book.author}.`;
+    bookAuthor.textContent = `${book.author}`;
     bookDiv.appendChild(bookAuthor);
     const bookPages = document.createElement('div');
     bookPages.textContent = `${book.pages}`;
@@ -42,3 +38,15 @@ function displayBook() {
   });
 }
 
+
+
+const submitBtn = document.querySelector('.submit');
+submitBtn.addEventListener('click', () => {
+  const titleInput = (document.querySelector('#title')).value;
+  const authorInput = (document.querySelector('#author')).value;
+  const pagesInput = (document.querySelector('#pages')).value;
+  const statusInput = (document.querySelector('#status')).value;
+  const newBook = new Book(titleInput, authorInput, pagesInput, statusInput);
+  addBookToLibrary(newBook);
+  displayBook();
+});
