@@ -21,19 +21,21 @@ function addBookToLibrary(book) {
 function displayBook() {
   myLibrary.forEach((book) => {
     const bookDiv = document.createElement('div');
-    const bookTitle = document.createElement('h1');
+    bookDiv.classList.add('book-info')
+    const bookTitle = document.createElement('div');
     bookTitle.textContent = `${book.title}`;
     bookDiv.appendChild(bookTitle);
-    const bookAuthor = document.createElement('p');
-    bookAuthor.textContent = `by ${book.author}.`;
+    const bookAuthor = document.createElement('div');
+    bookAuthor.textContent = `${book.author}.`;
     bookDiv.appendChild(bookAuthor);
-    const bookPages = document.createElement('p');
-    bookPages.textContent = `Number of pages: ${book.pages}.`;
+    const bookPages = document.createElement('div');
+    bookPages.textContent = `${book.pages}.`;
     bookDiv.appendChild(bookPages);
-    const bookStatus = document.createElement('p');
-    bookStatus.textContent = `Status: ${book.status}.`;
+    const bookStatus = document.createElement('div');
+    bookStatus.textContent = `${book.status}.`;
     bookDiv.appendChild(bookStatus);
-    const removeButton = document.createElement('button');
+    const removeButton = document.createElement('svg');
+    removeButton.classList.add('remove-button');
     removeButton.textContent = 'Remove Book';
     bookDiv.appendChild(removeButton);
     container.appendChild(bookDiv);

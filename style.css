@@ -1,6 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Engagement&display=swap');
+
 h1 {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 4rem;
+  font-weight: 100;
+  font-family: 'Engagement';
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+fieldset {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-radius: 20px;
+  border-color: gray;
 }
 
 legend {
@@ -9,52 +28,58 @@ legend {
   margin-bottom: 20px;
 }
 
+label, .submit {
+  font-size: 1.2rem;
+}
+
 input {
   height: 1rem;
   width: 16rem;
   margin-bottom: 10px;
   margin-top: 4px;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding-left: 10px
 }
-
-label {
-  font-size: 1.2rem;
+input:nth-child(7) {
+  width: 4rem;
 }
 
 select {
   width: 5rem;
   margin-bottom: 20px;
   margin-top: 4px;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid black;
 }
 
-fieldset {
-  width: 20rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2rem;
+.submit {
+  width: 6rem;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-bottom: 10px;
 }
-
-form {
-  display: flex;
-  justify-content: center;
-}
-
-
-
-
 
 #container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid black;
+}
+
+.book-info {
   display: grid;
-  grid-template-columns: repeat(autofit, minmax(150px, 1fr));
-  grid-template-rows: repeat(2, 1fr);
-  border: 1px solid black;
+  grid-template-columns: 4fr 4fr 1fr 1fr 1fr;
+  align-items: center;
+  font-size: 1.2rem;
+  border: 1px solid blue;
 }
 
-div {
-  border: 1px solid black;
+div > div > div {
+  border: 1px solid red;
 }
 
-button {
-  height: 3rem;
-  width: 9rem;
+.remove-button {
+
 }
