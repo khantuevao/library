@@ -19,7 +19,7 @@ fieldset {
   align-items: center;
   margin-bottom: 2rem;
   border-radius: 20px;
-  border-color: gray;
+  border: 2px solid rgb(80, 79, 79);
 }
 
 legend {
@@ -33,12 +33,12 @@ label, .submit {
 }
 
 input {
-  height: 1rem;
+  height: 1.1rem;
   width: 16rem;
   margin-bottom: 10px;
   margin-top: 4px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid rgb(80, 79, 79);
   padding-left: 10px
 }
 input:nth-child(7) {
@@ -51,7 +51,7 @@ select {
   margin-top: 4px;
   border-radius: 5px;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid rgb(80, 79, 79);
 }
 
 .submit {
@@ -65,7 +65,9 @@ select {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border: 1px solid black;
+  border: 2px solid rgb(80, 79, 79);
+  border-radius: 20px;
+  padding: 10px;
 }
 
 .book-info {
@@ -73,13 +75,12 @@ select {
   grid-template-columns: 4fr 4fr 1fr 1fr 1fr;
   align-items: center;
   font-size: 1.2rem;
-  border: 1px solid blue;
 }
 
-div > div > div {
-  border: 1px solid red;
+.book-info:first-child {
+  font-weight: bold;
 }
 
-.remove-button {
-
+div > div > div:last-child {
+  text-align: center;
 }

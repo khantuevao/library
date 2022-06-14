@@ -29,14 +29,14 @@ function displayBook() {
     bookAuthor.textContent = `${book.author}.`;
     bookDiv.appendChild(bookAuthor);
     const bookPages = document.createElement('div');
-    bookPages.textContent = `${book.pages}.`;
+    bookPages.textContent = `${book.pages}`;
     bookDiv.appendChild(bookPages);
     const bookStatus = document.createElement('div');
-    bookStatus.textContent = `${book.status}.`;
+    bookStatus.textContent = `${book.status}`;
     bookDiv.appendChild(bookStatus);
-    const removeButton = document.createElement('svg');
+    const removeButton = document.createElement('div');
     removeButton.classList.add('remove-button');
-    removeButton.textContent = 'Remove Book';
+    removeButton.textContent = '✖';
     bookDiv.appendChild(removeButton);
     container.appendChild(bookDiv);
   });
