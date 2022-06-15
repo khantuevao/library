@@ -11,8 +11,6 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
-
-
 function displayBooks() {
   for (let i = 0; i < myLibrary.length; i++) {
     let bookContainer = document.createElement('div');
@@ -38,4 +36,16 @@ function displayBooks() {
     mainContainer.appendChild(bookContainer);
   }
 }
+
+const submitButton = document.querySelector('#submit');
+submitButton.addEventListener('click', () => {
+  let inputTitle = (document.querySelector('#title')).value;
+  let inputAuthor = (document.querySelector('#author')).value;
+  let inputPages = (document.querySelector('#pages')).value;
+  let inputStatus = (document.querySelector('#status')).value;
+  let inputBook = new Book(inputTitle, inputAuthor, inputPages, inputStatus);
+  addBookToLibrary(inputBook);
+  displayBooks();
+});
+
 
