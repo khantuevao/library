@@ -36,7 +36,6 @@ function displayBooks() {
   for (let i = 0; i < myLibrary.length; i++) {
     let bookContainer = document.createElement('div');
     bookContainer.classList.add('book-info');
-    bookContainer.setAttribute('data-index', `${i}`);
 
     let titleDiv = document.createElement('div');
     titleDiv.textContent = `${(myLibrary[i]).title}`;
@@ -58,7 +57,6 @@ function displayBooks() {
     let removeButton = document.createElement('button');
     removeButton.classList.add('remove-button');
     removeButton.textContent = 'Remove';
-    removeButton.setAttribute('data-index', `${i}`);
     bookContainer.appendChild(removeButton);
 
     let mainContainer = document.querySelector('#container');
@@ -91,10 +89,19 @@ submitButton.addEventListener('click', () => {
 });
 
 function addEvent() {
-  let btns = document.getElementsByClassName('remove-button');
-  for (let i = 0; i < btns.length; i++) {
-    btns[i].addEventListener('click', () => {
+  let rbtns = document.getElementsByClassName('remove-button');
+  for (let i = 0; i < rbtns.length; i++) {
+    rbtns[i].addEventListener('click', () => {
       myLibrary.splice(i, 1);
+      clearBooks();
+      displayBooks();
+      addEvent();
+    });
+  }
+  let sbtns = document.getElementsByClassName('status-button');
+  for (let i = 0; i < sbtns.length; i++) {
+    sbtns[i].addEventListener('click', () => {
+      (myLibrary[i].status === 'Read')? myLibrary[i].status = 'Not read' : myLibrary[i].status = 'Read';
       clearBooks();
       displayBooks();
       addEvent();
@@ -103,3 +110,4 @@ function addEvent() {
 }
 
 document.addEventListener('DOMContentLoaded', addEvent);
+
