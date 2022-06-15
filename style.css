@@ -61,7 +61,7 @@ select {
   border: 1px solid rgb(80, 79, 79);
 }
 
-.submit {
+#submit {
   width: 6.2rem;
   height: 1.8rem;
   border-radius: 5px;
