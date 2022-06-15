@@ -1,4 +1,25 @@
-let myLibrary = [];
+let theHobbit = {
+  title: 'The Hobbit',
+  author: 'J.R.R. Tolkien',
+  pages: 310,
+  status: 'Not read'
+}
+
+let book1984 = {
+  title: '1984',
+  author: 'G. Orwell',
+  pages: 328,
+  status: 'Read'
+}
+
+let warPeace = {
+  title: 'War and Peace',
+  author: 'L. Tolstoy',
+  pages: 1225,
+  status: 'Read'
+}
+
+let myLibrary = [theHobbit, book1984, warPeace];
 
 function Book(title, author, pages, status) {
   this.title = title,
@@ -22,7 +43,7 @@ function displayBooks() {
     authorDiv.textContent = `${(myLibrary[i]).author}`;
     bookContainer.appendChild(authorDiv);
     let pagesDiv = document.createElement('div');
-    pagesDiv.textContent = `${(myLibrary[i]).pages}`;
+    pagesDiv.textContent = `${(myLibrary[i]).pages} pages`;
     bookContainer.appendChild(pagesDiv);
     let statusButton = document.createElement('button');
     statusButton.classList.add('status-button');
@@ -40,7 +61,6 @@ function displayBooks() {
 function clearBooks() {
   let bookInfo = document.getElementsByClassName('book-info');
   for (let i = bookInfo.length - 1; i >= 0; i--) {
-    console.log(i);
     bookInfo[i].remove();
   }
 }
@@ -51,6 +71,10 @@ submitButton.addEventListener('click', () => {
   let inputAuthor = (document.querySelector('#author')).value;
   let inputPages = (document.querySelector('#pages')).value;
   let inputStatus = (document.querySelector('#status')).value;
+  if (inputTitle === '' || inputAuthor === '' || inputPages === '') {
+    alert('You need to fill all the fields');
+    return;
+  }
   let inputBook = new Book(inputTitle, inputAuthor, inputPages, inputStatus);
   addBookToLibrary(inputBook);
   clearBooks();
