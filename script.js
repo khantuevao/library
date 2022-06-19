@@ -21,11 +21,16 @@ let warPeace = {
 
 let myLibrary = [theHobbit, book1984, warPeace];
 
-function Book(title, author, pages, status) {
-  this.title = title,
-  this.author = author,
-  this.pages = pages,
-  this.status = status
+class Book {
+  constructor(title, author, pages, status) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.status = status;
+  }
+  get info() {
+    return `${this.title} by ${this.author}, ${this.pages} long, ${this.status}`;
+  }
 }
 
 function addBookToLibrary(book) {
